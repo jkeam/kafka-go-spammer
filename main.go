@@ -31,7 +31,7 @@ func main() {
 	// send messages
 	messageChan := producer.ProduceChannel()
 	for i := 0; i < times; i++ {
-		word := strconv.Itoa(i)
+		word := fmt.Sprintf("Message: %d", i)
 		messageChan <- &kafka.Message{
 			TopicPartition: kafka.TopicPartition{Topic: &topicName, Partition: kafka.PartitionAny},
 			Value:          []byte(word),
