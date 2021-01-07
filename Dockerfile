@@ -4,5 +4,4 @@ COPY . .
 RUN mkdir bin && make
 
 USER nobody
-# CMD ["go", "./bin/main"]
-CMD ["/bin/sh"]
+CMD ["./bin/main"]
